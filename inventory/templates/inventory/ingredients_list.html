@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Inventory ingredients{% endblock %}
+
+
+{% block content %}
+
+<h2>Inventory Ingredients </h2>
+
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Unit Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ingr in ingredients_list %}
+        <tr>
+            <td>{{ ingr.id }}</td>
+            <td>{{ ingr.name }}</td>
+            <td>{{ ingr.quantity }}</td>
+            <td>{{ ingr.unit }}</td>
+            <td>{{ ingr.unit_price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
